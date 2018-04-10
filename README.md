@@ -2,11 +2,13 @@
 Kong Command Line Client
 ===========
 
-A command line client for API Gateway - [Kong][kong-url]. The default Kong APIs are in HTTP RESTful style. Normally you need to use `curl` to access it. `kong-cli` make this easier.
+A command line client for API Gateway - [Kong][kong-url] Admin API . The default Kong Admin API are in HTTP RESTful style. Normally you need to use `curl` to access it. `kong-cli` make this easier.
 
 `kong-cli` is compatible with Kong 0.10.x.
 
 ## Installation
+
+* python2.7.x  
 
 `sudo python setup.py install`
 
@@ -22,22 +24,37 @@ or
 
 ## Usage
 
-	$ kong-cli
-	Usage: kong-cli [OPTIONS] COMMAND [ARGS]...
-	
-	Options:
-	  --conf TEXT
-	  --debug / --no-debug
-	  --help                Show this message and exit.
-	
-	Commands:
-	  api
-	  config
-	  consumer
-	  key-auth
-	  plugin
-	  status
+```
+$ kong-cli
+Usage: kong-cli [OPTIONS] COMMAND [ARGS]...
 
+Options:
+	--conf TEXT
+	--debug / --no-debug
+	--help                Show this message and exit.
+
+Commands:
+	api
+	config
+	consumer
+	key-auth
+	plugin
+	status
+
+$ kong-cli api list  --help
+Usage: kong-cli api list [OPTIONS]
+
+Options:
+  --id TEXT            a filter on the list based on the api `id` field
+  --name TEXT          a filter on the list based on the api `name` field
+  --upstream-url TEXT  a filter on the list based on the api `upstream_url`
+                       field
+  --retries TEXT       a filter on the list based on the api `retries` field
+  --size TEXT          a filter on the list based on the api `size` field
+  --offset TEXT        a filter on the list based on the api `offset` field
+  --help               Show this message and exit.
+
+```
 
 ## Demo
 
@@ -46,6 +63,8 @@ or
 ## Author
 
 Simon / Jinyu LIU <simon.jinyu.liu#gmail.com>
+
+Elmeast / Orangle LIU <orangleliu#gmail.com>
 
 ## License
 ```
